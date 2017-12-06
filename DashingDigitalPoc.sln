@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B05DBB85-A97
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{89C8BB1E-2406-4876-8E72-38BECDF80749}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashing.IDP", "Dashing.IDP\Dashing.IDP.csproj", "{4527366B-1ADB-4CAC-A085-57FD7C7AF736}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{EC6C66DE-60E3-41AB-9A57-D21BE71AE458}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4527366B-1ADB-4CAC-A085-57FD7C7AF736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4527366B-1ADB-4CAC-A085-57FD7C7AF736}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4527366B-1ADB-4CAC-A085-57FD7C7AF736}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4527366B-1ADB-4CAC-A085-57FD7C7AF736}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC6C66DE-60E3-41AB-9A57-D21BE71AE458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EC6C66DE-60E3-41AB-9A57-D21BE71AE458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC6C66DE-60E3-41AB-9A57-D21BE71AE458}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -28,9 +22,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{4527366B-1ADB-4CAC-A085-57FD7C7AF736} = {B05DBB85-A972-4A38-94B5-218AC1852BBD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07B47E06-46C6-4101-8593-BCE5E528FFA1}

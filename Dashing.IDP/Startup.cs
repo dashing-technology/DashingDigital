@@ -26,33 +26,16 @@ namespace Dashing.IDP
         public void ConfigureServices(IServiceCollection services)
         {
 
-            var connectionString = Configuration["connectionStrings:marvinUserDBConnectionString"];
-            //services.AddDbContext<MarvinUserContext>(o => o.UseSqlServer(connectionString));
-
-            //services.AddScoped<IMarvinUserRepository, MarvinUserRepository>();
-
-            var identityServerConnectionString = Configuration["connectionStrings:identityServerDataDBConnectionString"];
-            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+            services.AddIdentityServer()
+            .AddDeveloperSigningCredential()
+         .AddInMemoryApiResources(Config.GetApiResources())
+         .AddInMemoryClients(Config.GetClients());
 
 
             services.AddMvc();
-            services.AddIdentityServer()
-                .AddDeveloperSigningCredential();
+          
         }
-        public X509Certificate2 LoadCertificateFromStore(string thumbPrint)
-        {
-            using (var store = new X509Store(StoreName.My, StoreLocation.LocalMachine))
-            {
-                store.Open(OpenFlags.ReadOnly);
-                var certCollection = store.Certificates.Find(X509FindType.FindByThumbprint,
-                    thumbPrint, true);
-                if (certCollection.Count == 0)
-                {
-                    throw new Exception("The specified certificate wasn't found. Check the specified thumbprint.");
-                }
-                return certCollection[0];
-            }
-        }
+       
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
