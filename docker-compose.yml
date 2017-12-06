@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  dashing.idp:
+    image: dashing.idp
+    build:
+      context: ./Dashing.IDP
+      dockerfile: Dockerfile
