@@ -6,3 +6,9 @@ services:
     build:
       context: ./Dashing.IDP
       dockerfile: Dockerfile
+
+  dashing.edm:
+    image: dashing.edm
+    build:
+      context: ./../Dashing.EDM
+      dockerfile: Dockerfile
