@@ -10,5 +10,5 @@ services:
   dashing.edm:
     image: dashing.edm
     build:
-      context: ./../Dashing.EDM
+      context: ./Dashing.EDM
       dockerfile: Dockerfile
