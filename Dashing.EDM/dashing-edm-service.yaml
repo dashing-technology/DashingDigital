@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: dashing-edm-deployment
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: dashing-edm
+    spec:
+      containers:
+      - name: dashing-edm
+        image: dashinggroup.azurecr.io/dashingedm
+        ports:
+        - containerPort: 80
+        env:
+        - name: DASHINGIDP
+          value: "dashing-edm"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dashing-edm
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: dashing-edm
