@@ -19,8 +19,9 @@ namespace TestClient
 
             // discover endpoints from metadata
 
-            DiscoveryClient discoClient = new DiscoveryClient("http://localhost:5000");
+            DiscoveryClient discoClient = new DiscoveryClient("http://52.191.196.80/");
             discoClient.Policy.ValidateIssuerName = false;
+            discoClient.Policy.RequireHttps = false;
             var disco = await discoClient.GetAsync();
 
             if (disco.IsError)
@@ -48,7 +49,7 @@ namespace TestClient
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await client.GetAsync("http://localhost:8080/api/identity");
+            var response = await client.GetAsync("http://52.191.193.31/api/values");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
