@@ -15,7 +15,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: DASHINGIDP
+        - name: DASHINGEDM
           value: "dashing-edm"
 ---
 apiVersion: v1
