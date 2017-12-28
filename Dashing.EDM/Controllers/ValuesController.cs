@@ -13,7 +13,7 @@ namespace Dashing.EDM.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2", "Smitha6"};
+            return new string[] { "value1", "value2", "Smitha57"};
         }
 
         // GET api/values/5
